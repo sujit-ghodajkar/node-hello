@@ -24,8 +24,8 @@ pipeline {
         stage('Build Executable') {
             steps {
                 // Use pkg to build the executable
-                sh 'npm install -g pkg'
-                sh 'pkg . --output myapp.exe'
+                sh 'npm install -g nexe'
+                sh 'nexe -i index.js -o myapp.exe'
             }
         }
 
