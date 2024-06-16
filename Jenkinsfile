@@ -20,6 +20,16 @@ pipeline {
                 sh 'npm install'
             }
         }
+
+        /*stage('Deploy') {
+            steps {
+                sshagent(['your-ssh-credentials-id']) {
+                    sh """
+                    ssh -o StrictHostKeyChecking=no $ubuntu@$DEPLOY_SERVER 'bash -s' < deploy-script.sh
+                    """
+                }
+            }*/
+        }
     }
 
     post {
