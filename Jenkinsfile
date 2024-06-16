@@ -17,15 +17,15 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 // Install Node.js dependencies
-                sh 'npm install'
+                sh 'sudo npm install'
             }
         }
 
         stage('Build Executable') {
             steps {
                 // Use pkg to build the executable
-                sh 'npm install -g nexe'
-                sh 'nexe -i index.js -o myapp.exe --build'
+                sh 'sudo npm install -g nexe'
+                sh 'sudo nexe -i index.js -o myapp.exe --build'
             }
         }
 
