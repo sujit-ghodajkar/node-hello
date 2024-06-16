@@ -20,21 +20,6 @@ pipeline {
                 sh 'npm install'
             }
         }
-
-        stage('Build Executable') {
-            steps {
-                // Use nexe to build the executable
-                sh 'npm install nexe'
-                sh 'nexe -i index.js -o myapp.exe --build'
-            }
-        }
-
-        stage('Archive Artifact') {
-            steps {
-                // Archive the executable file
-                archiveArtifacts artifacts: 'myapp.exe', fingerprint: true
-            }
-        }
     }
 
     post {
