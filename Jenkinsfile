@@ -28,8 +28,8 @@ pipeline {
                     ssh -o StrictHostKeyChecking=no $ubuntu@$DEPLOY_SERVER 'bash -s' < deploy-script.sh
                     """
                 }
-            }*/
-        }
+            }
+        }*/
     }
 
     post {
